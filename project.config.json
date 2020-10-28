@@ -39,5 +39,16 @@
   "compileType": "miniprogram",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
-  "condition": {}
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "配置1",
+          "pathName": "pages/Home/index",
+          "query": "name=2",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

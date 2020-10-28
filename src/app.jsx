@@ -1,41 +1,48 @@
 import Taro, { Component } from '@tarojs/taro'
-import Index from './pages/index'
+import { Provider } from '@tarojs/redux'
+import dva from './utils/dva'
+import models from './models/index'
+import Index from './pages/Home/index'
 
 import './app.less'
 
-// 如果需要在 h5 环境中开启 React Devtools
-// 取消以下注释：
-// if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
-//   require('nerv-devtools')
-// }
+const dvaApp = dva.createApp({
+  initialState: {},
+  models,
+})
+const store = dvaApp.getStore()
+
+// eslint-disable-next-line no-underscore-dangle
+Taro.__store__ = store // 挂载到 Taro 上以便全局使用
 
 class App extends Component {
-
-  componentDidMount () {}
-
-  componentDidShow () {}
-
-  componentDidHide () {}
-
-  componentDidCatchError () {}
-
   config = {
     pages: [
-      'pages/index/index'
+      'pages/Home/index',
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
+      navigationBarTextStyle: 'black',
+    },
   }
+
+  componentDidMount () {}
+
+  // componentDidShow () {}
+
+  // componentDidHide () {}
+
+  // componentDidCatchError () {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
   render () {
     return (
-      <Index />
+      <Provider store={store}>
+        <Index />
+      </Provider>
     )
   }
 }

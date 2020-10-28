@@ -1,0 +1,74 @@
+/* 按下效果 */
+.active() {
+  transition: background-color 0.3s;
+
+  &:active {
+    background-color: @color-grey-5;
+  }
+}
+
+/* 点点点 */
+.ellipsis-single-line() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ellipsis-more-line(@line: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: @line;
+  -webkit-box-orient: vertical;
+}
+
+/* 0.5px 底部线条 */
+.border-bottom() {
+  position: relative;
+  margin-bottom: 1px;
+
+  &::after {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    box-sizing: border-box;
+    border: 0 solid @border-color-base;
+    border-bottom-width: 1px;
+    transform: scale(0.5);
+    transform-origin: center;
+    content: '';
+    pointer-events: none;
+  }
+}
+
+/* form表单样式 */
+.form-item-content() {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  margin-left: @list-item-padding;
+  padding-right: @list-item-padding;
+}
+.form-item-label() {
+  width: @list-label-width;
+  margin-right: @list-label-right-space;
+  color: @list-label-color;
+  font-size: 30px;
+}
+.form-item-placeholder() {
+  color: @list-palceholder-color;
+  font-size: 30px;
+}
+.form-item-value() {
+  color: @list-value-color;
+  font-size: 30px;
+}
+
+.background-image-cover (@imgeUrl) {
+  background-image: url(@imgeUrl);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

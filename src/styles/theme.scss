@@ -1,0 +1,16 @@
+$color-brand: #ff6d21;
+$color-brand-light: #ff9259;
+$color-brand-dark: #cc571a;
+
+$color-border-base: #e7e7e7;
+
+$color-text-placeholder: rgba(0, 0, 0, 0.3);
+
+$at-input-font-size: 30px;
+$at-input-label-color: rgba(0, 0, 0, 0.9);
+$at-input-text-color: rgba(0, 0, 0, 0.6);
+$at-input-placeholder-color: rgba(0, 0, 0, 0.3);
+
+$at-input-number-btn-color: #191919;
+
+@import '~taro-ui/dist/style/index.scss';

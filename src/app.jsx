@@ -4,6 +4,9 @@ import dva from './utils/dva'
 import models from './models/index'
 import Index from './pages/Home/index'
 
+// 全局引入taro样式和自定义的mixin、变量、全局样式
+import '@/styles/theme.scss'
+import '@/styles/global.less'
 import './app.less'
 
 const dvaApp = dva.createApp({

@@ -33,6 +33,7 @@ const config = {
   },
   plugins: [
     '@tarojs/plugin-less',
+    '@tarojs/plugin-sass',
     '@tarojs/plugin-terser',
   ],
   // 因为不推荐使用 @ ，跟 @ 开头的包会冲突

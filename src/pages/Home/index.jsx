@@ -4,7 +4,7 @@ import { View, Text } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
 import { useEffectOnce } from '@/hooks'
 
-import styles from './index.less'
+import styles from './index.module.less'
 
 function Home ({ home, dispatch }) {
   console.log(home)
@@ -14,8 +14,8 @@ function Home ({ home, dispatch }) {
     })
   })
   return (
-    <View className={styles.index}>
-      <Text>Hello world1!</Text>
+    <View className={styles.home}>
+      <Text>Hello Taro</Text>
       <AtButton type="primary">按钮文案</AtButton>
     </View>
   )
